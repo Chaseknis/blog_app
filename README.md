@@ -20,7 +20,7 @@
 
 # 📰 Blog App <a name="about-project"></a>
 
-> A fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
+***A website to display Blog posts in a user friendly interface for readers to interact with by adding comments and likes to posts they like more.***
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -66,7 +66,7 @@ Example command:
 
 ```sh
   cd blog_app
-  bundle install (install all dependencies)
+  bundle install
 
 ```
 
@@ -75,7 +75,7 @@ Example command:
 To run the project redirecting to the root directory of the project and run the following command:
 
 ```sh
- bin/rails server (to run web application)
+ bin/rails server 
 
 ```
 
@@ -84,13 +84,13 @@ To run the project redirecting to the root directory of the project and run the 
 To test the web app run the following command:
 
 ```sh
- rspec spec (  to test the console application)
+ rspec spec
 
 ```
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **zewdu erkyhun**
+👤 **Innocent N.**
 
 - GitHub: [@chaseknis](https://github.com/Chaseknis)
 - Twitter: [@ChaseToTheWorld](https://twitter.com/chasetotheworld)
@@ -102,7 +102,7 @@ To test the web app run the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [Validations and Model specs.]
+- Validations and Model specs.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
