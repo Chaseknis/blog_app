@@ -1,1 +1,4 @@
-<h1>Here is the Post details</h1>
+<div class="container">
+<%= render "shared/posttile", post:@post %>
+<%= render "shared/comments", comments: @post.comments %>
+</div>>

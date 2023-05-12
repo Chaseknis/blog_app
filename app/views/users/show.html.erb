@@ -1,1 +1,22 @@
-<h1>Here are the user details</h1>
+<div class="user_details">
+    <%= render "shared/usertile",user: @user  %>
+<div class="user_bio">
+
+<h3>Bio:</h3>
+    <%= @user.bio %>
+</div>
+<div class="posts">
+    <% @user.return_recent_posts.each do |post| %>
+    <%= render 'shared/posttile', post: post %>
+<% end %>
+
+</div>
+
+<%= link_to user_posts_path(@user.id),class: 'button_link'  do%> 
+
+<button class="all_posts_button" type="button">
+    See all posts
+</button>
+
+<% end %>
+</div>
