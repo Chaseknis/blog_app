@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :users, only: %i[index show] do
-    resources :posts, only: %i[index show]
-  end
+  get '/users/:id(.:format)', to: 'users#show', as: 'user'
+  get '/users/:user_id/posts', to: 'posts#index', as: 'user_posts'
+  get '/users/:user_id/posts/:id', to: 'posts#show', as: 'user_post'
 end
