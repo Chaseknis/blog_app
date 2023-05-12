@@ -1,1 +1,12 @@
-<h1>Here is a list of posts<h1>
+<div>
+<%= render "shared/usertile",user: @user %>
+<div class="posts">
+<% @posts.each do |post|%>
+  <%= render "shared/posttile", post:post %>
+  <%= render "shared/comments",comments: post.return_recent_comments %>
+<% end %>
+<button type="button" class="pagination_button">
+    Pagination
+</button>
+</div>
+</div>

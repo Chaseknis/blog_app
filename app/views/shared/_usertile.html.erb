@@ -1,0 +1,11 @@
+
+<li class='user_list_item'>
+  <div class="photo">
+    <img src="<%= user.photo %>" alt="<%= user.name %>">
+  </div>
+
+  <div class="details">
+    <h2><%= link_to user.name, user %></h2>
+    <p>Posts(<%= user.posts_counter%>)</p>
+  </div>
+</li>

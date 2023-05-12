@@ -1,1 +1,9 @@
-<h1>Users list<h1>
+<ul>
+    <% if @users.empty? %>
+      <p class='users-empty-message'>No users yet!</p>
+    <% else %>
+      <% @users.each do |user| %>
+        <%= render 'shared/usertile', user: user %>
+      <% end %>
+    <% end %>
+  </ul>
