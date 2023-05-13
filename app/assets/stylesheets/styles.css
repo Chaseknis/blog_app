@@ -21,6 +21,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .all_posts_button,
@@ -30,25 +31,27 @@ a {
 }
 
 .details {
-  border: 1px solid black;
   width: 70%;
-  position: relative;
   padding: 0 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid black;
 }
 
-.profile-photo {
-  border: 2px dotted black;
-  height: 150px;
-  width: 150px;
-  margin: 1rem 0;
+.profile_photo {
+  height: 90px;
+  width: 90px;
+  margin-right: 1rem;
+  border: 1px solid black;
 }
 
 .username {
   font-size: 2rem;
 }
 
-.posts-count {
-  float: right;
+.posts_count {
+  align-self: flex-end;
 }
 
 .user_details {
@@ -90,4 +93,8 @@ a {
 .comments_container {
   border: solid 1px black;
   padding: 1rem;
+}
+
+.likes_button {
+  padding: 6px 12px;
 }

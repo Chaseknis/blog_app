@@ -1,0 +1,7 @@
+<%= form_with url:url, method: :post,scope: :new_comment,local: true do |f|%>
+  <div class="comment-form">
+    <h3>Add comment</h3>
+    <%= f.text_area :text, size:'70x3', placeholder: "Add a comment"%>
+    <%= f.submit%>
+  </div>
+<%end%>
