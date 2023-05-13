@@ -1,0 +1,15 @@
+<section class='create'>
+  <h1>Add a comment</h1>
+
+  <%= form_with model: @comment, url: user_post_comments_path do |form| %>
+    <div class="form-field">
+      <%= form.label :text, 'Comment' %>
+      <%= form.text_area :text, placeholder: 'Enter comment', class: 'border1' %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit 'Add Comment', class: 'btn btn-create' %>
+    </div>
+  <% end %>
+
+</section>

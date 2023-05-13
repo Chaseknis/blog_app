@@ -1,11 +1,15 @@
+<%= link_to user_path(user.id) do %>
 
-<li class='user_list_item'>
-  <div class="photo">
-    <img src="<%= user.photo %>" alt="<%= user.name %>">
-  </div>
+<div>
+  <li class="user_list_item">
+    <img class="profile_photo" src=<%= user.photo%> alt="profile image">
+    <div class="details">
+      <h2 class="username">
+        <%= user.name %>
+      </h2>
 
-  <div class="details">
-    <h2><%= link_to user.name, user %></h2>
-    <p>Posts(<%= user.posts_counter%>)</p>
-  </div>
-</li>
+      <p class="posts_count">Number of posts: <%= user.posts.count %></p>
+    </div>
+  </li>
+</div>
+<% end %>

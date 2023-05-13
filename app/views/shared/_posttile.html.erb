@@ -1,8 +1,15 @@
   <%= link_to user_post_path(post.author.id,post.id) do%>
   
   <div class="post_tile">
-  <h3>Post #: <%= post.id %> <%=post.title %></h3>
-  <p><%= post.text%></p>
-  <p class="comments_likes" >Comments: <%= post.comments_counter%> Likes: <%= post.likes_counter%> </p>
+    <h3>Post #: <%= post.id %> <%=post.title %></h3>
+    <h4>Author: <%= post.author.name%></h4>
+    <p><%= post.text%></p>
+
+    <%= link_to user_post_likes_path(user_id: post.author.id,post_id: post.id), data:{turbo_method: :post} do %>
+      <button class="likes_button">
+        Like
+      </button>
+    <%end%>
+    <p class="comments_likes" >Comments: <%= post.comments_counter%> Likes: <%= post.likes_counter%> </p>
   </div>
   <%end%>
