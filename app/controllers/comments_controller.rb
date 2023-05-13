@@ -1,15 +1,16 @@
 class CommentsController < ApplicationController
   def new
-    @comment = Comment.new
-    @user = ApplicationController.current_user
+    @post = post.find(params[post_id])
+    @user = @post.author
+    @comment = Comment.new(comment_params)
   end
 
   def create
-    user = ApplicationController.current_user
-    post = Post.find(params[:post_id])
-    new_comment =
-      Comment.create(post: post, author: user, text: comment_params['text'])
-    if new_comment.valid?
+    @post = Post.find(params[:post_id])
+    @user = @post.author
+    @new_comment = Comment.create(post: @post, author: @user, text: comment_params['text'])
+
+    if @new_comment.valid?
       flash[:success] = 'Commented successfully'
       respond_to do |format|
         format.html do

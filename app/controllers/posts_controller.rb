@@ -17,9 +17,7 @@ class PostsController < ApplicationController
       Post.new(
         author: current_user,
         title: post_params['title'],
-        text: post_params['text'],
-        likes_counter: 0,
-        comments_counter: 0
+        text: post_params['text']
       )
 
     if @new_post.save

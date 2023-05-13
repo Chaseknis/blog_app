@@ -1,10 +1,11 @@
 <%= form_with url: url,method: :post,scope: :new_post,local:true do |form| %>
-<div class="posts_form">
-<h3>Add new post:</h3>
-<%= form.label :title,"blog title" %>
-<%= form.text_field :title %>
-<%= form.label :text,"blog text" %>
-<%= form.text_area :text, size:'70x4' %>
-<%= form.submit%>
-</div>
+  <div class="posts_form">
+    <h3>Add new post:</h3>
+    
+    <%= form.label :title,"blog title" %>
+    <%= form.text_field :title %>
+    <%= form.label :text,"blog text" %>
+    <%= form.text_area :text, size:'70x4' %>
+    <%= form.submit%>
+  </div>
 <%end%>
