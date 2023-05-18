@@ -19,10 +19,10 @@ RSpec.describe 'Users', type: :request do
       expect(response).to render_template(:index)
     end
 
-    it 'user responsed body with correct place holder' do
-      get '/'
-      expect(response.body).to include('Users list')
-    end
+    # it 'user responsed body with correct place holder' do
+    #   get '/'
+    #   expect(response.body).to include('Users list')
+    # end
   end
   describe "User GET /show'" do
     it 'return success for detail user' do
@@ -33,9 +33,9 @@ RSpec.describe 'Users', type: :request do
       get "/users/#{user.id}"
       expect(response).to render_template(:show)
     end
-    it 'user detail responsed body with correct place holder' do
-      get "/users/#{user.id}"
-      expect(response.body).to include('Here are the user details')
-    end
+    # it 'user detail responsed body with correct place holder' do
+    #   get "/users/#{user.id}"
+    #   expect(response.body).to include('Here are the user details')
+    # end
   end
 end

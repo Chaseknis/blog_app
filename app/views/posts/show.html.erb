@@ -1,5 +1,5 @@
 <div class="container">
 <%= render "shared/posttile", post:@post %>
-<%= render "shared/comments", comments: @post.comments %>
+<%= render "shared/comments", comments: @post.comments.includes(:author) %>
 <%= render "shared/comments_form", url:user_post_comments_path(user_id:@user.id ,post_id:@post.id), locals:{post_id:@post.id}%>
 </div>>

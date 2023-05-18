@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   def new
     @post = post.find(params[post_id])
+    # @posts = Post.all.includes(:comments)
     @user = @post.author
     @comment = Comment.new(comment_params)
   end
