@@ -3,7 +3,7 @@
 <div class="posts">
 <% @posts.each do |post|%>
   <%= render "shared/posttile", post:post %>
-  <%= render "shared/comments",comments: post.return_recent_comments %>
+  <%= render "shared/comments",comments: post.return_recent_comments.includes(:author) %>
 <% end %>
 <button type="button" class="pagination_button">
     Pagination

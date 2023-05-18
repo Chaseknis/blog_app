@@ -13,7 +13,7 @@ RSpec.describe 'User Post Index Page', type: :feature do
     @comment_three = Comment.create(text: 'comment three', author: @user_one, post: @post_one)
     @comment_four = Comment.create(text: 'comment four', author: @user_one, post: @post_one)
     @comment_five = Comment.create(text: 'comment five', author: @user_one, post_id: @post_one)
-    @like_one = Like.create(author: @user_one, posts_id: @post_one)
+    @like_one = Like.create(author_id: @user_one, posts_id: @post_one)
   end
   it 'displays the user\'s profile picture' do
     visit user_posts_path(@user_one)
@@ -39,14 +39,14 @@ RSpec.describe 'User Post Index Page', type: :feature do
     visit user_posts_path(@user_one.id)
     expect(page).to have_content(@post_one.return_recent_comments.first.text)
   end
-    it 'displays the number of comments a post has' do
-      visit user_posts_path(@user_one.id)
-      expect(page).to have_content(@post_one.comments.count)
-    end
-    # it 'displays the number of likes a post has' do
-    #     visit user_posts_path(@user_one.id)
-    #     expect(page).to have_content(@post_one.likes.count)
-    # end
+  it 'displays the number of comments a post has' do
+    visit user_posts_path(@user_one.id)
+    expect(page).to have_content(@post_one.comments.count)
+  end
+  it 'displays the number of likes a post has' do
+    visit user_posts_path(@user_one)
+    expect(@post_one.likes_counter).to eq(0)
+  end
   it 'Check if a section for pagination is visible when there are more posts' do
     visit user_posts_path(@user_one.id)
     expect(page).to have_button('Pagination')
