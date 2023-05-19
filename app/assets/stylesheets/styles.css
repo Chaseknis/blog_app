@@ -98,3 +98,44 @@ a {
 .likes_button {
   padding: 6px 12px;
 }
+.sign_in_form {
+  width: 100%;
+}
+.log_in_container,
+.sign_up_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.new_user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.log_in_header,
+.sign_up_header {
+  text-align: center;
+}
+.width_input {
+  width: 400px;
+  padding: 6px 12px;
+}
+.log_in_button,
+.sign_up_button {
+  width: 430px;
+  padding: 6px 12px;
+  margin-top: 1rem;
+}
+.notice {
+  color: red;
+  text-align: center;
+}
+.other_links {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
