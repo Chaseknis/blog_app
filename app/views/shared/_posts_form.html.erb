@@ -1,4 +1,4 @@
-<%= form_with url: url,method: :post,scope: :new_post,local:true do |form| %>
+<%= form_with model: @post, url: user_posts_path(current_user), method: :post, local: true, scope: :post do |form| %>
   <div class="posts_form">
     <h3>Add new post:</h3>
     
