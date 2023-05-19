@@ -10,8 +10,8 @@ class ApplicationController < ActionController::Base
   end
 
   def check_email_confirmation
-    if user_signed_in? && !current_user.confirmed?
-      flash.now[:alert] = "Please verify your email address before accessing your account."
-    end
+    return unless user_signed_in? && !current_user.confirmed?
+
+    flash.now[:alert] = 'Please verify your email address before accessing your account.'
   end
 end
