@@ -13,6 +13,7 @@ RSpec.describe 'Post Show Page', type: :feature do
     @comment_three = Comment.create(text: 'comment three', author: @user_one, post: @post_one)
     @comment_four = Comment.create(text: 'comment four', author: @user_one, post_id: @post_one)
     @comment_five = Comment.create(text: 'comment five', author: @user_one, post_id: @post_one)
+    @like_one = Like.create(author: @user_one, posts_id: @post_one)
   end
 
   it 'displays the post title' do
@@ -27,12 +28,14 @@ RSpec.describe 'Post Show Page', type: :feature do
 
   it 'displays the number of comments the post has' do
     visit user_post_path(@user_one.id, @post_one.id)
-    expect(@post_one.comments_counter).to eq(6)
+    expect(page).to have_content(@post_one.comments_counter)
   end
 
   it 'displays the number of likes the post has' do
-    visit user_post_path(@user_one.id, @post_one.id)
-    expect(@post_one.likes_counter).to eq(0)
+    @post.likes.create(author: @user_one)
+    visit post_path(@post)
+    expect(page).to have_content('Likes:', count: 1)
+    expect(page).to have_content(@post.likes.count)
   end
 
   it 'displays the post body' do
@@ -41,12 +44,16 @@ RSpec.describe 'Post Show Page', type: :feature do
   end
 
   it 'displays the username of each commentor' do
-    visit user_post_path(@user_one.id, @post_one.id)
-    expect(page).to have_content(@comment_one.author.name)
+    visit post_path(@post)
+    @post.comments.each do |comment|
+      expect(page).to have_content(comment.author.name)
+    end
   end
 
   it 'displays the comment left by each commentor' do
-    visit user_post_path(@user_one.id, @post_one.id)
-    expect(page).to have_content(@user_one.posts.first.comments.first.text)
+    visit post_path(@post)
+    @post.comments.each do |comment|
+      expect(page).to have_content(comment.text)
+    end
   end
 end
